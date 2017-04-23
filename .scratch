@@ -1,0 +1,48 @@
+### This is your current level03 code ##########################################
+class Level03(Level):
+    def __init__(self, player):
+        Level.__init__(self, player)
+        player.xChange = 0
+        level = [[32, 32, 0, 100], [32, 32, 32, 100], [32, 32, 64, 100],
+                 [32, 32, 96, 100]]
+
+        spikes = [[32, 32, 96, 132], [32, 32, 96, 164], [32, 32, 96, 196],
+                  [32, 32, 96, 228], [32, 32, 96, 260], [32, 32, 96, 294],
+                  [32, 32, 96, 324], [32, 32, 96, 356], [32, 32, 96, 388],
+                  [32, 32, 96, 420], [32, 32, 96, 452], [32, 32, 96, 484],
+                  [32, 32, 96, 516], [32, 32, 128, 516], [32, 32, 160, 516],
+                  [32, 32, 192, 516], [32, 32, 224, 516], [32, 32, 256, 516],
+                  [32, 32, 288, 516], [32, 32, 320, 516], [32, 32, 352, 516],
+                  [32, 32, 384, 516], [32, 32, 416, 516], [32, 32, 256, 516],]
+
+        boost = [[32, 32, 170, 480]]
+
+        exit = [[32, 32, 100, 160]]
+
+        for platform in level:
+            block = Platform(platform[0], platform[1])
+            block.rect.x = platform[2]
+            block.rect.y = platform[3]
+            block.player = self.player
+            self.platformList.add(block)
+
+        for danger in spikes:
+            block = Spike(danger[0], danger[1])
+            block.rect.x = danger[2]
+            block.rect.y = danger[3]
+            block.player = self.player
+            self.enemyList.add(block)
+
+        for door in exit:
+            block = Door(door[0], door[1])
+            block.rect.x = door[2]
+            block.rect.y = door[3]
+            block.player = self.player
+            self.doorList.add(block)
+
+        for high in boost:
+            block = Boost(high[0], high[1])
+            block.rect.x = high[2]
+            block.rect.y = high[3]
+            block.player = self.player
+            self.boostList.add(block)

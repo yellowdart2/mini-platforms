@@ -1,0 +1,41 @@
+THEME IS "SMALL WORLD"
+HERO is 32x32 with 7px pad left 8px pad right 2px pad top (.png)
+PLATFORM is 32x32 with 0pad (.png)
+Alpha key is 224,111,139
+- Simple platformer, get from a->b, maybe crib platformation themes if we have
+  time
+
+#. Draw  character
+#. Render character to screen with collision detection with screen boundaries
+#. Draw platform
+#. Render platform, collision detection
+  #. some sort of class or arrays for platform objects?
+  #. probably a level class with an array of platforms
+#. Alpha rendering for hero
+#. Gravity/jump mechanic
+#. Add "spikes"
+  #. add game over state
+#. Add "door" or end of level
+#. Music?
+#. Load font and print text
+#. R to retry // NOT NEEDED
+#. boost jump platform
+13. platforms that move left to right
+14. keys
+#.
+ #. intro
+ #. credits
+ #. level start
+ #. level complete
+ #. game over (retry)
+#. Make the printable level number actually reflect reality
+#. Need a way to import these levels from file, for sanity's sake
+#. Need a congrats you won the game screen and clean exit to credits
+# Restart current level on death
+## BUGS ##
+1. Collision detection with sides of platforms
+#. When you die, if you press ESC to exit you go back to the splash screen
+   instead of credits.
+#. Game crashes if you hit escape during credits
+## CREDITS ##
+state machine code https://www.reddit.com/r/pygame/comments/3kghhj/simple_state_machine_example/
